@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Light theme colors */
+    --color-background-start: #fdf2f8; /* rose-50 */
+    --color-background-end: #fecaca;   /* rose-200 */
+    
+    --color-primary-start: #fda4af;    /* rose-300 */
+    --color-primary-end: #e11d48;      /* rose-600 */
+    --color-primary-hover-start: #fb7185; /* rose-400 */
+    --color-primary-hover-end: #be123c;   /* rose-700 */
+    
+    --color-secondary-start: #99f6e4;  /* teal-200 */
+    --color-secondary-end: #0d9488;    /* teal-600 */
+    --color-secondary-hover-start: #5eead4; /* teal-300 */
+    --color-secondary-hover-end: #0f766e;   /* teal-700 */
+    
+    --color-text-light: #f9fafb;       /* gray-50 */
+    --color-text-dark: #111827;        /* gray-900 */
+  }
+
+  .dark {
+    /* Dark theme colors */
+    --color-background-start: #111827; /* gray-900 */
+    --color-background-end: #18181b;   /* zinc-950 via slate-950 */
+    
+    /* Primary and Secondary remain the same in dark theme */
+    --color-text-light: #f9fafb;
+    --color-text-dark: #111827;
+  }
+}
+
+@layer utilities {
+  /* Background utilities */
+  .bg-primary {
+    background: linear-gradient(135deg, var(--color-primary-start) 0%, var(--color-primary-end) 100%);
+  }
+  
+  .bg-primary-start {
+    background-color: var(--color-primary-start);
+  }
+  
+  .bg-primary-end {
+    background-color: var(--color-primary-end);
+  }
+  
+  .bg-secondary {
+    background: linear-gradient(135deg, var(--color-secondary-start) 0%, var(--color-secondary-end) 100%);
+  }
+  
+  .bg-secondary-start {
+    background-color: var(--color-secondary-start);
+  }
+  
+  .bg-secondary-end {
+    background-color: var(--color-secondary-end);
+  }
+  
+  .bg-background {
+    background: linear-gradient(135deg, var(--color-background-start) 0%, var(--color-background-end) 100%);
+  }
+  
+  .bg-background-start {
+    background-color: var(--color-background-start);
+  }
+  
+  .bg-background-end {
+    background-color: var(--color-background-end);
+  }
+  
+  /* Hover states */
+  .hover\:bg-primary-hover:hover {
+    background: linear-gradient(135deg, var(--color-primary-hover-start) 0%, var(--color-primary-hover-end) 100%);
+  }
+  
+  .hover\:bg-secondary-hover:hover {
+    background: linear-gradient(135deg, var(--color-secondary-hover-start) 0%, var(--color-secondary-hover-end) 100%);
+  }
+  
+  /* Text utilities */
+  .text-light {
+    color: var(--color-text-light);
+  }
+  
+  .text-dark {
+    color: var(--color-text-dark);
+  }
+  
+  .text-primary {
+    background: linear-gradient(135deg, var(--color-primary-start) 0%, var(--color-primary-end) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-secondary {
+    background: linear-gradient(135deg, var(--color-secondary-start) 0%, var(--color-secondary-end) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Border utilities */
+  .border-primary {
+    border-color: var(--color-primary-start);
+  }
+  
+  .border-secondary {
+    border-color: var(--color-secondary-start);
+  }
+
+  /* Additional utility for dark theme background */
+  .dark .bg-background {
+    background: linear-gradient(135deg, var(--color-background-start) 0%, #0f172a 50%, var(--color-background-end) 100%);
+  }
+}
